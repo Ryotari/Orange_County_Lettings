@@ -30,6 +30,5 @@ class LettingsTest(TestCase):
     def test_address_model(self):
         assert str(self.address) == f'{self.address.number} {self.address.street}'
 
-
     def test_letting_model(self):
         assert str(self.letting) == self.letting.title
