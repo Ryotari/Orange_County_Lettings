@@ -10,19 +10,17 @@ jobs:
           name: Initialize venv
           command: |
             python -m venv venv
-            venv/bin/activate
+            ./venv/Scripts/activate
             pip install -r requirements.txt
-
       - run:
           name: Linting
           command: |
-            venv/bin/activate
+            ./venv/Scripts/activate
             flake8
-
       - run:
           name: Run tests
           command: |
-            venv/bin/activate
+            ./venv/Scripts/activate
             pytest
 
 workflows:
