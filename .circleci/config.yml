@@ -24,7 +24,7 @@ jobs:
             pytest
   containerize:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.10.2
     steps: 
       - checkout
       - run:
