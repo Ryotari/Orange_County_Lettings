@@ -1,13 +1,12 @@
 import os
 
 import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
 
 
 sentry_sdk.init(
-    dsn="https://896dda3639494a96ab8ffe871534a041@o4505607294353408.ingest.sentry.io\
-    /4505607304839168",
-    integrations=[DjangoIntegration()]
+    dsn="https://7f2c4ed6ae5854fb0598925cc4cd995d@o4505607294353408.ingest.sentry.io\
+    /4505743013117952",
+    traces_sample_rate=1.0,
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
