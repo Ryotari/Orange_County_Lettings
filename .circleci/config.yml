@@ -67,7 +67,7 @@ workflows:
                 master
       - deploy:
           requires:
-            - build and test
+            - build-and-test
             - containerize
           filters:
             branches:
