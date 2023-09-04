@@ -37,6 +37,17 @@ jobs:
             docker build -t oc_lettings .
             docker tag oc_lettings $DOCKER_LOGIN/$DOCKER_REPO:$CIRCLE_SHA1
             docker push $DOCKER_LOGIN/$DOCKER_REPO:$CIRCLE_SHA1
+  deploy:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - run:
+          name: Deploy Docker image to Heroku
+          command: |
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push web --app $HEROKU_APP_NAME
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release web --app $HEROKU_APP_NAME
 workflows:
   main:
     jobs:
@@ -44,6 +55,14 @@ workflows:
       - containerize:
           requires:
             - build-and-test
+          filters:
+            branches:
+              only:
+                master
+      - heroku:
+          requires:
+            - build-and-test
+            - containerize
           filters:
             branches:
               only:
