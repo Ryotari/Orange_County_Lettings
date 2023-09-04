@@ -59,7 +59,7 @@ workflows:
             branches:
               only:
                 master
-      - heroku:
+      - deploy:
           requires:
             - build-and-test
             - containerize
