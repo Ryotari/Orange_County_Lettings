@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to Orange County Lettings’s documentation! &#8212; Orange County Lettings  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-orange-county-lettings-s-documentation">
+<h1>Welcome to Orange County Lettings’s documentation!<a class="headerlink" href="#welcome-to-orange-county-lettings-s-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="the-project">
+<h2>The Project<a class="headerlink" href="#the-project" title="Link to this heading">¶</a></h2>
+<p><strong>OpenClassrooms Python Developer Project #13: Scale a Django Application Using Modular Architecture</strong></p>
+<p>This project is a modified version of the <a class="reference external" href="https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git">Python OC Lettings FR</a>.</p>
+<p>Improvements brought:</p>
+<ol class="arabic simple">
+<li><p>Technical debt refactor.</p></li>
+<li><p>Modular architecture refactor.</p></li>
+<li><p>Application and error monitoring via Sentry.</p></li>
+<li><p>CI/CD pipeline using <a class="reference external" href="https://circleci.com/">CircleCI</a> and deployment to <a class="reference external" href="https://www.heroku.com/">Heroku</a>.</p></li>
+</ol>
+</section>
+<section id="local-development">
+<h2>Local development<a class="headerlink" href="#local-development" title="Link to this heading">¶</a></h2>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p>GitHub account with read access to this repository</p></li>
+<li><p>Git CLI</p></li>
+<li><p>SQLite3 CLI</p></li>
+<li><p>Python interpreter, version 3.6 or higher</p></li>
+</ul>
+<p>Throughout the local development documentation, it is assumed that the python command in your OS shell runs the above-mentioned Python interpreter (unless a virtual environment is activated).</p>
+<p><strong>Links</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dashboard.heroku.com/apps/lettings-oc-cpoinhos">Heroku for this project</a></p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/r/ryotari/oc_13_lettings">DockerHub Images</a></p></li>
+<li><p><a class="reference external" href="https://app.circleci.com/pipelines/github/Ryotari/Orange_County_Lettings">CircleCI for this project</a></p></li>
+</ul>
+<p><strong>Clone the repository</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="nb">cd </span><span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">put</span><span class="p">/</span><span class="n">project</span><span class="p">/</span><span class="k">in</span>
+<span class="p">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">Ryotari</span><span class="p">/</span><span class="n">Orange_County_Lettings</span><span class="p">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p><strong>Create the virtual environment</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="nb">cd </span><span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">Python-OC-Lettings-FR</span>
+<span class="p">$</span> <span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
+</pre></div>
+</div>
+<p>Activate the environment with (Windows):</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>Or (MacOS and Linux):</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">source</span> <span class="n">venv</span><span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>To deactivate the environment:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+<p><strong>Run the app</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="nb">cd </span><span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">Python-OC-Lettings-FR</span>
+<span class="p">$</span> <span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+<span class="p">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-requirement</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">$</span> <span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
+</pre></div>
+</div>
+<p>Go to <a class="reference external" href="http://localhost:8000">Localhost</a></p>
+<p><strong>Linting</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">flake8</span>
+</pre></div>
+</div>
+<p><strong>Tests</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+<p><strong>Docker</strong></p>
+<p>Download and install <a class="reference external" href="https://docs.docker.com/get-docker/">Docker</a>
+Go to the project directory and build the image:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">docker</span> <span class="n">build</span> <span class="n">-t</span> <span class="p">&lt;</span><span class="n">image-name</span><span class="p">&gt;</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Run the image:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">docker</span> <span class="n">run</span> <span class="n">-dp</span> <span class="n">8000</span><span class="p">:</span><span class="n">8000</span> <span class="p">&lt;</span><span class="n">image-name</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Click on the affected port on Docker Desktop</p>
+<p><strong>Sentry</strong></p>
+<p>After creating a Sentry account, set up a new Django project. You can find the Sentry_DSN into <em>Project Settings</em> &gt; <em>Client Keys</em>.
+Copy the DSN and replace the DSN in the settings.py file.</p>
+</section>
+<section id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">¶</a></h2>
+<p><strong>Prerequisites</strong></p>
+<p>In order to perform the deployment and continuous integration of the app, you need:
+* <a class="reference external" href="https://circleci.com/">CircleCI account</a>
+* <a class="reference external" href="https://github.com/">GitHub account</a>
+* <a class="reference external" href="https://www.docker.com/">Docker account</a>
+* <a class="reference external" href="https://www.heroku.com/">Heroku account</a>
+* <a class="reference external" href="https://sentry.io/welcome/">Sentry account</a></p>
+<p>The deployment of the app is automated by the CircleCI pipeline. When updates are pushed to the GitHub repository, the pipeline triggers tests and linting. If updates are made on the master branch, and if the tests and linting pass, it builds a Docker image and pushes it to DockerHub. If the Docker image is pushed, the pipeline then deploys the app on Heroku.</p>
+<p><strong>Configuration</strong></p>
+<p>Set up a new project on CircleCI via “Set Up Project”. Select the master branch as a source for the .circleci/config.yml file.</p>
+<p>Set up the environment variables (Project Settings &gt; Environment Variables):</p>
+<ul class="simple">
+<li><p>DJANGO_SECRET_KEY : Django secret key. Use:</p></li>
+</ul>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">python</span> <span class="n">-c</span> <span class="s1">&#39;from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DOCKER_LOGIN : Your Docker account username.</p></li>
+<li><p>DOCKER_PASSWORD : Your Docker account password.</p></li>
+<li><p>DOCKER_REPO : The DockerHub repository name.</p></li>
+<li><p>HEROKU_APP_NAME : The Heroku app name that will be deployed. Change it everytime; you will receive an error when running th pipeline if the name is already an existing app.</p></li>
+<li><p>HEROKU_TOKEN : The Heroku API Key. You can find it in your Heroku account settings.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Orange County Lettings</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Ryotari.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
