@@ -40,7 +40,7 @@ Throughout the local development documentation, it is assumed that the python co
 
 **Links**
 
-* `Heroku for this project <https://dashboard.heroku.com/apps/lettings-oc-cpoinhos>`_
+* `Heroku for this project <https://lettings-oc-cpoinhos-4c44e940bafb.herokuapp.com/>`_
 * `DockerHub Images <https://hub.docker.com/r/ryotari/oc_13_lettings>`_
 * `CircleCI for this project <https://app.circleci.com/pipelines/github/Ryotari/Orange_County_Lettings>`_
 
