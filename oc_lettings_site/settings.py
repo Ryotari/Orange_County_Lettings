@@ -4,7 +4,8 @@ import sentry_sdk
 
 
 sentry_sdk.init(
-    dsn="https://7f2c4ed6ae5854fb0598925cc4cd995d@o4505607294353408.ingest.sentry.io/4505743013117952",
+    dsn="https://7f2c4ed6ae5854fb0598925cc4cd995d@o4505607294353408.ingest.sentry.io\
+    /4505743013117952",
     traces_sample_rate=1.0,
 )
 
